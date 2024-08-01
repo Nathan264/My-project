@@ -15,7 +15,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D rig;
 
     private bool _isRunning;
+    private bool _isRolling;
     private Vector2 _direction;
+
+    public bool isRolling {
+        get { return _isRolling; }
+        set { _isRolling = value; }
+    }
 
     public bool isRunning {
         get { return _isRunning; }
@@ -32,12 +38,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         rig = gameObject.GetComponent<Rigidbody2D>();
+        initialSpeed = speed;
     }
 
     void Update() {
         OnInput();
-
-        OnRun();        
+        OnRun();  
+        OnRolling();      
     }
 
     // Update is called once per frame
@@ -68,9 +75,19 @@ public class Player : MonoBehaviour
     }
 
     private void OnMove() {
-        movement = rig.position + direction * Time.fixedDeltaTime * speed; 
+        movement = rig.position + speed * Time.fixedDeltaTime * _direction; 
 
         rig.MovePosition(movement);
+    }
+
+    private void OnRolling() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            _isRolling = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space)) {
+            _isRolling = false;
+        }
     }
 
     #endregion
