@@ -13,17 +13,24 @@ MonoBehaviour:
   m_Name: DialogSettings
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
-  actorName: 
   sentence: 
   speakerSprite: {fileID: 0}
   dialogues:
-  - profile: {fileID: 0}
+  - actorName: 
+    profile: {fileID: 21300000, guid: e560bee6d59047f4fb150bfcb13fd455, type: 3}
     sentences:
-      portuguese: 
+      portuguese: asdasd
       english: 
       spanish: 
-  - profile: {fileID: 0}
+  - actorName: 
+    profile: {fileID: 21300000, guid: e560bee6d59047f4fb150bfcb13fd455, type: 3}
     sentences:
-      portuguese: 
+      portuguese: sdasd
+      english: 
+      spanish: 
+  - actorName: 
+    profile: {fileID: 0}
+    sentences:
+      portuguese: asdasdasd
       english: 
       spanish: 
